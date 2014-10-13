@@ -38,9 +38,11 @@ angular.module('ui.bootstrap.dropdown', [])
         return;
     }
 
-    openScope.$apply(function() {
-      openScope.isOpen = false;
-    });
+    if ( openScope ) {
+      openScope.$apply(function() {
+        openScope.isOpen = false;
+      });
+    }
   };
 
   var escapeKeyBind = function( evt ) {
